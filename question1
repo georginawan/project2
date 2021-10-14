@@ -4,7 +4,7 @@ import statsmodels.formula.api as smf
 def build_model(Subject):
     #load matlab data into python
     df = pd.read_excel('data1.xlsx',sheet_name=Subject)
-    print(df)
+    #print(df)
 
     #model for function 1
     mdl1 = smf.ols(formula='gIn ~ 1 + gOut + gOut*iOut', data=df)

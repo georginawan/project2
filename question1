@@ -1,16 +1,21 @@
 import pandas as pd
 import statsmodels.formula.api as smf
 
-#load matlab data into python
-df = pd.read_excel('data1.xlsx',sheet_name="Subj1")
-print(df)
+def model_build(Subject):
+    #load matlab data into python
+    df = pd.read_excel('data1.xlsx',sheet_name=Subject)
+    print(df)
 
-#model for function 1
-mdl1 = smf.ols(formula='gIn ~ 1 + gOut + gOut*iOut', data=df)
-mdl1 = mdl1.fit()
-print(mdl1.summary())
+    #model for function 1
+    mdl1 = smf.ols(formula='gIn ~ 1 + gOut + gOut*iOut', data=df)
+    mdl1 = mdl1.fit()
+    print(mdl1.summary())
 
-#model for function 2
-mdl2 = smf.ols(formula='iIn ~ 1 + gOut + iOut', data=df)
-mdl2 = mdl2.fit()
-print(mdl2.summary())
+    #model for function 2
+    mdl2 = smf.ols(formula='iIn ~ 1 + gOut + iOut', data=df)
+    mdl2 = mdl2.fit()
+    print(mdl2.summary())
+
+model_build("Subj0")
+model_build("Subj1")
+model_build("Subj2")

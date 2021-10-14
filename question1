@@ -3,3 +3,6 @@ import statsmodels.formula.api as smf
 
 df = pd.read_excel('data1.xlsx',sheet_name="Subj1")
 print(df)
+
+model = smf.ols(formula='gIn ~ 1 + gOut + gOut*iOut', data=df)
+mdl1 = model.fit()

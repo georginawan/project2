@@ -1,7 +1,7 @@
 import pandas as pd
 import statsmodels.formula.api as smf
 
-def model_build(Subject):
+def build_model(Subject):
     #load matlab data into python
     df = pd.read_excel('data1.xlsx',sheet_name=Subject)
     print(df)
@@ -16,6 +16,7 @@ def model_build(Subject):
     mdl2 = mdl2.fit()
     print(mdl2.summary())
 
-model_build("Subj0")
-model_build("Subj1")
-model_build("Subj2")
+
+build_model("Subj0")
+build_model("Subj1")
+build_model("Subj2")

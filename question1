@@ -7,7 +7,7 @@ def build_model(Subject):
     #print(df)
 
     #model for function 1
-    mdl1 = smf.ols(formula='gIn ~ 1 + gOut + gOut*iOut', data=df)
+    mdl1 = smf.ols(formula='gIn ~ 1 + gOut + gOut:iOut', data=df)
     mdl1 = mdl1.fit()
     print(mdl1.summary())
 
